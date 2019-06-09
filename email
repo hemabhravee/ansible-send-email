@@ -1,0 +1,13 @@
+- hosts: localhost
+  vars_files:
+       - password.yml
+  tasks:
+      - name: GMAIL
+        mail:
+                host: smtp.gmail.com
+                port: 587
+                username: sender@gmail.com
+                password: "{{ password }}"
+                to: reciever@gmail.com
+                subject: Hola
+                body: Amigo
